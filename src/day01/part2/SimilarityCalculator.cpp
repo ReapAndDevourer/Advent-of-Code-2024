@@ -11,15 +11,14 @@
 #include <execution>
 
 /*******************************************************************************
- * @brief With the call of this function we can calculate the distance of
- * all places given in list 1 vs list 2. The distance is calculated by adding
- * the difference between the smallest element of both lists, the 2nd smallest
- * elements of the lists ...(repeat for all index).
- *
+ * @brief With the call of this function we can calculate the similarity-score
+ * of all places given in list 1 vs list 2. The score is calculated by adding
+ * the value of elements of the first list, while each element will be
+ * multiplied with the amount of occurunces of that value in the 2nd list.
  *
  * @param place1 List with the first set of location-ids
  * @param place2 List with the second set of location-ids
- * @return Distance between the list-locations
+ * @return Similarity-Score
  ******************************************************************************/
 long calculateSimilarity(std::vector<int>& place1, std::vector<int>& place2) {
     long similarity = 0;

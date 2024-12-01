@@ -13,7 +13,7 @@ BOOST_AUTO_TEST_SUITE(Part2)
 
 /*******************************************************************************
  * With this test and the data we will check if the created algorithm
- * calculates the distance as expected.
+ * calculates the Similarity-Score as expected.
  ******************************************************************************/
 BOOST_AUTO_TEST_CASE(SimilarityCalculation) {
     std::vector<int> set1 { 3, 4, 2, 1, 3, 3 };
