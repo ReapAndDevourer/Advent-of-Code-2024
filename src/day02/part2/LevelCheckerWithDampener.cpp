@@ -36,18 +36,20 @@ void LevelCheckerWithDampener::calculateLevelSafety(const std::string_view dataF
         // Variable which will signal that line doesn't need to be checked
         // anymore after a safe variant has been found
         bool safeVariantFound { false };
+        // Extract uint8_t values out of line-string
         std::istringstream lineData { lineString };
-        constexpr size_t ELEMENTS_PaER_ROW { 5 };
         std::vector<uint8_t> rowData { };
         int elementValue;
         while (lineData >> elementValue)
             rowData.push_back(static_cast<uint8_t>(elementValue));
         // Do the normal check of the line
+        // Stop further checks if line is safe
         if(LevelCheckerWithDampener::isLineSafe(rowData)) {
             amountOfSaveLevels++;
             safeVariantFound = true;
         }
-        //Check alternatives variants
+        // Check alternatives variants
+        // Stop further checks if one alternative is safe
         const size_t ALTERNATIVES_TO_CHECK { rowData.size() };
         for(size_t i = 0;
             i < ALTERNATIVES_TO_CHECK and not safeVariantFound;
