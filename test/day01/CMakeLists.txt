@@ -24,6 +24,7 @@ target_link_libraries(Day01-Part2-Test PRIVATE
 set(Day01-Sources
         $<TARGET_PROPERTY:Day01-Part1-Test,SOURCES>
         $<TARGET_PROPERTY:Day01-Part2-Test,SOURCES>
+        ../day02/part1/TestLevelChecker.cpp
 )
 
 set(Day01-Includes

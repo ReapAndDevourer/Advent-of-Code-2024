@@ -8,6 +8,11 @@ add_library(Day01-Part1 STATIC
         common/InputConverter.cpp
         part2/main.cpp
         part2/SimilarityCalculator.cpp
+        ../day02/part1/LevelChecker.h
+        ../day02/part1/LevelChecker.cpp
+        ../day02/part1/main.cpp
+        ../day02/part2/main.cpp
+        ../day02/part2/Empty.cpp
 )
 
 target_include_directories(Day01-Part1 PUBLIC
