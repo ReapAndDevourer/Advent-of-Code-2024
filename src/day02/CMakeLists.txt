@@ -17,7 +17,7 @@ target_link_libraries(Day02-Part1-Exe Day02-Part1)
 # Part2
 
 add_library(Day02-Part2 STATIC
-    part2/Empty.cpp
+        part2/LevelCheckerWithDampener.cpp
 )
 
 target_include_directories(Day02-Part2 PUBLIC

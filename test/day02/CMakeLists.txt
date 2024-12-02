@@ -11,6 +11,7 @@ target_link_libraries(Day02-Part1-Test PRIVATE
 
 #Part 2
 add_executable(Day02-Part2-Test
+        part2/TestLevelCheckerWithDampener.cpp
         ../TestMain.cpp
 )
 

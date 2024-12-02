@@ -6,7 +6,7 @@
 | **Day Name**           | **Part 1**       | **Part 2**       |
 |------------------------|------------------|------------------|
 | Day 1                  | ✔️ Implemented | ✔️ Implemented    |
-| Day 2                  | ✔️ Implemented   | 🔄 In Progress   |
+| Day 2                  | ✔️ Implemented   | ✔️ Implemented   |
 | Day 3                  | 🔒 Not Open Yet   | 🔒 Not Open Yet   |
 | Day 4                  | 🔒 Not Open Yet   | 🔒 Not Open Yet   |
 | Day 5                  | 🔒 Not Open Yet   | 🔒 Not Open Yet   |
