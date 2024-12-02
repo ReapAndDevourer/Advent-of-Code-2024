@@ -1,5 +1,4 @@
 #Part 1
-
 add_library(Day02-Part1 STATIC
         part1/LevelChecker.cpp
 )
@@ -15,7 +14,6 @@ add_executable(Day02-Part1-Exe
 target_link_libraries(Day02-Part1-Exe Day02-Part1)
 
 # Part2
-
 add_library(Day02-Part2 STATIC
         part2/LevelCheckerWithDampener.cpp
 )

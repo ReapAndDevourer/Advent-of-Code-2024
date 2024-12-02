@@ -1,4 +1,3 @@
-
 #Part 1
 add_library(Day01-Part1 STATIC
         part1/DistanceCalculator.cpp
@@ -20,7 +19,6 @@ add_executable(Day01-Part1-Exe
 target_link_libraries(Day01-Part1-Exe Day01-Part1)
 
 # Part2
-
 add_library(Day01-Part2 STATIC
     common/InputConverter.h
     common/InputConverter.cpp
