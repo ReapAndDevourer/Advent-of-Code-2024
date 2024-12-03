@@ -59,7 +59,7 @@ uint32_t Comp::calculateLineValue(
     auto mulInstructions = findMulInstructions(programmLine);
     // Step 2: Remove operands that are not fulfilling the wrong format
     removeIllegalOperands(mulInstructions);
-    // Step 3: Remove all the opf
+    // Step 3: Remove all the operations, that are after a don't() keyword
     removeDeactivatedOperands(mulInstructions, activationMarkers);
     // Extract the operand of the remaining multiplication instructions
     uint32_t sumOfProducts { 0 };
