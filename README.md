@@ -7,7 +7,7 @@
 |------------------------|------------------|------------------|
 | Day 1                  | ✔️ Implemented | ✔️ Implemented    |
 | Day 2                  | ✔️ Implemented   | ✔️ Implemented   |
-| Day 3                  | 🔒 Not Open Yet   | 🔒 Not Open Yet   |
+| Day 3                  | ✔️ Implemented   | ✔️ Implemented  |
 | Day 4                  | 🔒 Not Open Yet   | 🔒 Not Open Yet   |
 | Day 5                  | 🔒 Not Open Yet   | 🔒 Not Open Yet   |
 | Day 6                  | 🔒 Not Open Yet   | 🔒 Not Open Yet   |

@@ -4,8 +4,6 @@ add_library(Day01-Part1 STATIC
         part1/DistanceCalculator.h
         common/InputConverter.h
         common/InputConverter.cpp
-        part2/main.cpp
-        part2/SimilarityCalculator.cpp
 )
 
 target_include_directories(Day01-Part1 PUBLIC
