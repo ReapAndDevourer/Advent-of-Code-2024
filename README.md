@@ -8,8 +8,8 @@
 | Day 1                  | ✔️ Implemented    | ✔️ Implemented   |
 | Day 2                  | ✔️ Implemented    | ✔️ Implemented   |
 | Day 3                  | ✔️ Implemented    | ✔️ Implemented   |
-| Day 4                  | ✔️ Implemented    | 🔄 In Progress   |
-| Day 5                  | 🔒 Not Open Yet   | 🔒 Not Open Yet  |
+| Day 4                  | ✔️ Implemented    | ✔️ Implemented   |
+| Day 5                  | 🔄 In Progress    | ❌ Not Started   |
 | Day 6                  | 🔒 Not Open Yet   | 🔒 Not Open Yet  |
 | Day 7                  | 🔒 Not Open Yet   | 🔒 Not Open Yet  |
 | Day 8                  | 🔒 Not Open Yet   | 🔒 Not Open Yet  |

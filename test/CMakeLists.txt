@@ -27,11 +27,11 @@ target_link_libraries(Day03-Tests
 
 #Day4
 set(Day04-Part1-Src day04/part1/TestXMasSearch.cpp)
-#set(Day04-Part2-Src day04/part2/TestComputerPart2.cpp)
-add_executable(Day04-Tests TestMain.cpp ${Day04-Part1-Src} )#${Day04-Part2-Src})
+set(Day04-Part2-Src day04/part2/TestX_MasSearch.cpp)
+add_executable(Day04-Tests TestMain.cpp ${Day04-Part1-Src} ${Day04-Part2-Src})
 target_link_libraries(Day04-Tests
         Boost::unit_test_framework
-        Day04-Part1 #Day04-Part2
+        Day04-Part1 Day04-Part2
 )
 
 #All Days
@@ -40,12 +40,12 @@ add_executable(All-Tests
         ${Day01-Part1-Src} ${Day01-Part2-Src}
         ${Day02-Part1-Src} ${Day02-Part2-Src}
         ${Day03-Part1-Src} ${Day03-Part2-Src}
-        ${Day04-Part1-Src} #${Day04-Part2-Src}
+        ${Day04-Part1-Src} ${Day04-Part2-Src}
 )
 target_link_libraries(All-Tests PRIVATE
         Boost::unit_test_framework
         Day01-Part1 Day01-Part2
         Day02-Part1 Day02-Part2
         Day03-Part1 Day03-Part2
-        Day04-Part1 #Day04-Part2
+        Day04-Part1 Day04-Part2
 )

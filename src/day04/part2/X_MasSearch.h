@@ -17,11 +17,11 @@
 
 /*******************************************************************************
 * @class XMasSearch
-* @brief This class can be used to determine the amount of occurunces of
-* a provided Keyword. All directions listed inside
-* @ref XMasSearch::CheckDirection will be checked for the mathing keyword.
+* @brief This class is an adaptation of the XMasSearcher of part1. To fulfill
+* the requirements of the part2, we only need the Diagonal Direction Modes,
+* while the Keyword also needs to be altered.
 *******************************************************************************/
-class XMasSearch {
+class X_MasSearch {
 
 public:
 
@@ -36,12 +36,18 @@ private:
     ***************************************************************************/
     std::vector<Coordinates> startCoordinates { };
 
+    /***************************************************************************
+    * @brief Coordinates of the center of found keyword matches (With "MAS" as
+    * keyword this is equivalent to the position of 'A')
+    ***************************************************************************/
+    std::vector<std::pair<Coordinates,uint8_t>> matchCenters { };
+
 public:
 
     /***************************************************************************
     * @brief Keyword that has to be found as char-array
     ***************************************************************************/
-    static constexpr std::array<char, 4> KEYWORD { 'X', 'M', 'A', 'S' };
+    static constexpr std::array<char, 3> KEYWORD { 'M', 'A', 'S' };
 
     static_assert(not KEYWORD.empty(), "Keyword can't be empty!");
 
@@ -92,10 +98,9 @@ public:
             {CheckDirection::DIAGONAL_RIGHT_REVERSE, { -1, 1 }}
     };
 
-    explicit XMasSearch(std::string_view inputFileName);
+    explicit X_MasSearch(std::string_view inputFileName);
 
-    [[nodiscard]] uint16_t findAllOccurences() const;
-
+    [[nodiscard]] uint16_t findAmountOfMatchCrosses();
 
 protected:
 
@@ -107,9 +112,10 @@ protected:
         return this->startCoordinates;
     }
 
-    [[nodiscard]] uint16_t findOccurences(CheckDirection mode) const;
+    void findOccurences(CheckDirection mode);
 
 private:
+    void findAllOccurences();
     void findStartCoordinates();
     [[nodiscard]] bool doesFieldExist(Coordinates coord) const;
     [[nodiscard]] bool checkForMatch(const Coordinates& coordinates,
