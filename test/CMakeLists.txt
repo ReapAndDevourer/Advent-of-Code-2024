@@ -34,6 +34,15 @@ target_link_libraries(Day04-Tests
         Day04-Part1 Day04-Part2
 )
 
+#Day4
+set(Day05-Part1-Src day05/part1/TestPrinter.cpp)
+#set(Day05-Part2-Src day05/part2/TestX_MasSearch.cpp)
+add_executable(Day05-Tests TestMain.cpp ${Day05-Part1-Src} )#${Day05-Part2-Src})
+target_link_libraries(Day05-Tests
+        Boost::unit_test_framework
+        Day05-Part1 #Day05-Part2
+)
+
 #All Days
 add_executable(All-Tests
         TestMain.cpp
@@ -41,6 +50,7 @@ add_executable(All-Tests
         ${Day02-Part1-Src} ${Day02-Part2-Src}
         ${Day03-Part1-Src} ${Day03-Part2-Src}
         ${Day04-Part1-Src} ${Day04-Part2-Src}
+        ${Day05-Part1-Src} #${Day05-Part2-Src}
 )
 target_link_libraries(All-Tests PRIVATE
         Boost::unit_test_framework
@@ -48,4 +58,5 @@ target_link_libraries(All-Tests PRIVATE
         Day02-Part1 Day02-Part2
         Day03-Part1 Day03-Part2
         Day04-Part1 Day04-Part2
+        Day05-Part1 #Day05-Part2
 )
