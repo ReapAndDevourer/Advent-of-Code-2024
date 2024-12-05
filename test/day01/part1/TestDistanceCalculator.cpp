@@ -30,7 +30,7 @@ BOOST_AUTO_TEST_CASE(DistanceCalculation) {
  ******************************************************************************/
 BOOST_AUTO_TEST_CASE(InputCreation) {
     constexpr std::string_view testDateLoc {
-        R"(D:\Programming\Advent-of-Code-2024\test\day01\part1\TestData.txt)" };
+        R"(./../../test/day01/part1/TestData.txt)" };
     std::vector<int> dataset1 { 412341, 32423, 920948, 4, 203459 };
     std::vector<int> dataset2 { 12341234, 120294, 204958, 234, 200035};
     auto [convert1 , convert2] = convertInputData(testDateLoc.data());

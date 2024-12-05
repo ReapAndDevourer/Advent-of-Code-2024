@@ -9,7 +9,7 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_EXTENSIONS OFF)
 
 #Connect the build version of Boost.Test for unit-testing
-set(Boost_ROOT "D:\\Programming\\boost_1_86_0")
+set(Boost_ROOT "/Users/enriquerodriguez/Entwicklungstools/boost_1_86_0")
 find_package(Boost 1.85 COMPONENTS unit_test_framework REQUIRED)
 
 add_subdirectory(src)
