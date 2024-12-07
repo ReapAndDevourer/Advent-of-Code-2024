@@ -18,7 +18,7 @@
 * @brief This class converts input data into a ruleset that can be applied to
 * the printer software of the superior application.
 *******************************************************************************/
-class PrinterRuleset {
+class PrinterRulesetWithCorrection {
 
 public:
 
@@ -34,8 +34,9 @@ protected:
 
 public:
 
-    explicit PrinterRuleset(std::string_view inputFileName);
-    bool checkCorrectness(const std::vector<uint16_t>& printInstruction) const;
+    explicit PrinterRulesetWithCorrection(std::string_view inputFileName);
+    bool fixInstructionIfNeeded(std::vector<uint16_t>& printInstruction,
+        bool wasChanged = false) const;
 };
 
 #endif //PRINTERRULESET_H_0F694FFA_EA9F_4A52_8EA0_A6B9D71FD51C

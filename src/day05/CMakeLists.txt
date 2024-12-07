@@ -17,16 +17,17 @@ add_executable(Day05-Part1-Exe
 target_link_libraries(Day05-Part1-Exe Day05-Part1)
 
 # Part2
-#add_library(Day05-Part2 STATIC
-#        part2/X_MasSearch.cpp
-#)
-#
-#target_include_directories(Day05-Part2 PUBLIC
-#        .
-#)
-#
-#add_executable(Day05-Part2-Exe
-#        part2/main.cpp
-#)
-#
-#target_link_libraries(Day05-Part2-Exe Day05-Part2)
+add_library(Day05-Part2 STATIC
+        part2/PrinterRulesetWithCorrection.cpp
+        part2/PrinterFixingSW.cpp
+)
+
+target_include_directories(Day05-Part2 PUBLIC
+        .
+)
+
+add_executable(Day05-Part2-Exe
+        part2/main.cpp
+)
+
+target_link_libraries(Day05-Part2-Exe Day05-Part2)

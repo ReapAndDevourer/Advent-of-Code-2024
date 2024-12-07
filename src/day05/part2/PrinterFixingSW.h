@@ -11,14 +11,14 @@
 #include <string_view>
 #include <vector>
 #include <cstdint>
-#include "PrinterRuleset.h"
+#include "part2/PrinterRulesetWithCorrection.h"
 
 /*******************************************************************************
-* @class PrinterSW
+* @class PrinterFixingSW
 * @brief Abstraction of a printer SW that reads instructions from an input file
 * and checks if the contained print instructions are correct or not.
 *******************************************************************************/
-class PrinterSW {
+class PrinterFixingSW {
 
     /***************************************************************************
     * @brief Print-instructions that should be checked for correctness.
@@ -27,9 +27,9 @@ class PrinterSW {
 
 public:
 
-    explicit PrinterSW(std::string_view inputFileName);
-    [[nodiscard]] uint32_t getSumOfCorrectInstuction(
-        const PrinterRuleset& rulesetToApply) const;
+    explicit PrinterFixingSW(std::string_view inputFileName);
+    [[nodiscard]] uint32_t getSumOfCorrectedInstructions(
+        const PrinterRulesetWithCorrection& rulesetToApply);
 
 protected:
     /***************************************************************************

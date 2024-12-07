@@ -5,20 +5,19 @@
  *
  ******************************************************************************/
 
-#include "PrinterSW.h"
+#include "PrinterFixingSW.h"
 #include <cmath>
 #include <algorithm>
 #include <fstream>
 #include <sstream>
-#include <algorithm>
 
 /*******************************************************************************
-* @brief Constructor to creater a printer software whom instructions are
+* @brief Constructor to create a printer software which's instructions are
 * externally read and checked for obliance to a provided ruleset
 *
 * @param inputFileName Name / Path of the input data file.
 *******************************************************************************/
-PrinterSW::PrinterSW(const std::string_view inputFileName) {
+PrinterFixingSW::PrinterFixingSW(const std::string_view inputFileName) {
     std::ifstream inputData(inputFileName.data());
     if(not inputData.is_open())
         throw std::invalid_argument {
@@ -43,25 +42,30 @@ PrinterSW::PrinterSW(const std::string_view inputFileName) {
 
 /*******************************************************************************
 * @brief By calling this methode, we are able to retreive the sum of the
-* middle page numbers of the instructions of the printer that obly to the
-* provided ruleset.
+* middle page numbers of the instructions of the printer that did not
+* obly to the provided ruleset.
 *
 * @param rulesetToApply Ruleset with which the instructions should be
 * controlled.
 *******************************************************************************/
-uint32_t PrinterSW::getSumOfCorrectInstuction(
-    const PrinterRuleset& rulesetToApply) const {
+uint32_t PrinterFixingSW::getSumOfCorrectedInstructions(
+    const PrinterRulesetWithCorrection& rulesetToApply) {
     uint32_t sumsOfCorrectMiddles { 0 };
+    this->printInstructions.erase(
+        std::remove_if(
+            this->printInstructions.begin(), this->printInstructions.end(),
+            [&rulesetToApply](auto& instruction) {
+                const bool wasFixed = rulesetToApply.fixInstructionIfNeeded(instruction);
+                return not wasFixed;
+            }), this->printInstructions.end());
     std::for_each(this->printInstructions.begin(), this->printInstructions.end(),
-        [&rulesetToApply, &sumsOfCorrectMiddles](
+        [&sumsOfCorrectMiddles](
         const std::vector<uint16_t>& instructions) {
-            if(rulesetToApply.checkCorrectness(instructions)) {
-                // Check if the instruction set has a "middle element"
-                if(instructions.size() % 2 == 1) {
-                    const size_t middleIndex =
-                        std::floor(instructions.size() / 2);
-                    sumsOfCorrectMiddles += instructions.at(middleIndex);
-                }
+            // Check if the instruction set has a "middle element"
+            if(instructions.size() % 2 == 1) {
+                const size_t middleIndex =
+                    std::floor(instructions.size() / 2);
+                sumsOfCorrectMiddles += instructions.at(middleIndex);
             }
         });
     return sumsOfCorrectMiddles;
