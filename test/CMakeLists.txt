@@ -43,6 +43,15 @@ target_link_libraries(Day05-Tests
         Day05-Part1 Day05-Part2
 )
 
+#Day6
+set(Day06-Part1-Src day06/part1/TestGuardPath.cpp)
+set(Day06-Part2-Src day06/part2/TestEndlessLoops.cpp)
+add_executable(Day06-Tests TestMain.cpp ${Day06-Part1-Src} ${Day06-Part2-Src})
+target_link_libraries(Day06-Tests
+        Boost::unit_test_framework
+        Day06-Part1 Day06-Part2
+)
+
 #All Days
 add_executable(All-Tests
         TestMain.cpp
@@ -51,6 +60,7 @@ add_executable(All-Tests
         ${Day03-Part1-Src} ${Day03-Part2-Src}
         ${Day04-Part1-Src} ${Day04-Part2-Src}
         ${Day05-Part1-Src} ${Day05-Part2-Src}
+        ${Day06-Part1-Src} ${Day06-Part2-Src}
 )
 target_link_libraries(All-Tests PRIVATE
         Boost::unit_test_framework
@@ -59,4 +69,5 @@ target_link_libraries(All-Tests PRIVATE
         Day03-Part1 Day03-Part2
         Day04-Part1 Day04-Part2
         Day05-Part1 Day05-Part2
+        Day06-Part1 Day06-Part2
 )

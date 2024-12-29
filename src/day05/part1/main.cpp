@@ -14,7 +14,7 @@ int main() {
         "./../../../src/day05/part1/InputData.txt"
     };
     const PrinterRuleset ruleset { inputFileName.data() };
-    const PrinterFixingSW printer { inputFileName.data() };
+    const PrinterSW printer { inputFileName.data() };
     std::cout << "The sum of middle elements of correct instructions is: " <<
         printer.getSumOfCorrectInstuction(ruleset) << std::endl;
     return 0;
